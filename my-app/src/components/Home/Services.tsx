@@ -187,36 +187,36 @@ const Services: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
-            <Paper
-              elevation={0}
-              sx={{
-                p: { xs: 4, md: 8 }, 
-                borderRadius: 6, 
-                bgcolor: 'rgba(255, 255, 255, 0.4)', 
-                backdropFilter: 'blur(20px) saturate(180%)', 
-                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                border: '1px solid rgba(255, 255, 255, 0.2)', 
-                boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1)', 
-                direction: 'ltr', 
-              }}
-            >
-              <Grid container spacing={6} alignItems="center" >
-                <Grid item xs={12} md={6}> 
-                  <Box
-                    component={motion.div}
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    dir="rtl"
-                    sx={{
-                      width: "100%",
-                      height: { xs: 250, md: 400 }, 
-                      borderRadius: 4,
-                      overflow: "hidden",
-                      boxShadow: '0 20px 40px -15px rgba(0,0,0,0.2)', 
-                      position: 'relative'
-                    }}
-                  >
+                        <Paper
+                          elevation={0}
+                          sx={{
+                            p: { xs: 3, md: 6 }, // Adjusted padding
+                            borderRadius: 6, 
+                            bgcolor: 'rgba(255, 255, 255, 0.4)', 
+                            backdropFilter: 'blur(20px) saturate(180%)', 
+                            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                            border: '1px solid rgba(255, 255, 255, 0.2)', 
+                            boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1)', 
+                            direction: 'ltr', 
+                          }}
+                        >
+                          <Grid container spacing={4} alignItems="center">
+                            <Grid item xs={12} md={6}> 
+                              <Box
+                                component={motion.div}
+                                initial={{ scale: 0.95, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.6 }}
+                                dir="rtl"
+                                sx={{
+                                  width: "100%",
+                                  height: { xs: 200, md: 300 }, // Adjusted image height
+                                  borderRadius: 4,
+                                  overflow: "hidden",
+                                  boxShadow: '0 20px 40px -15px rgba(0,0,0,0.2)', 
+                                  position: 'relative'
+                                }}
+                              >
                     <Box
                       component="img"
                       src={services[value].image}
