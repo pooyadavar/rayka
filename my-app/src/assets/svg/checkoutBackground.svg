@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Blue and Gray Abstract Background">
+  <defs>
+    <style>
+      /* پالت رنگی جدید: آبی و طوسی پاستیلی */
+      
+      /* آبی آسمانی ملایم */
+      .color1 { fill: #bfdbfe; opacity: 0.7; } 
+      /* طوسی روشن (نقره‌ای) */
+      .color2 { fill: #cbd5e1; opacity: 0.6; } 
+
+      /* آبی یخی */
+      .color3 { fill: #e0f2fe; opacity: 0.8; } 
+      /* طوسی مایل به آبی (Slate) */
+      .color4 { fill: #8d9fb8ff; opacity: 0.3; } 
+
+      /* آبی مایل به بنفش خیلی کم‌رنگ */
+      .color5 { fill: #d3e3f8ff; opacity: 0.6; } 
+      /* طوسی خیلی محو */
+      .color6 { fill: #f1f5f9; opacity: 0.9; } 
+    </style>
+
+    <path id="blob1" d="M581.5 1083.7c0-22.6-6.3-54.9 4-75.8 14.1-28.6 51.3-46.1 76.1-63.8 40.4-28.8 75.5-60.9 103.2-102.6 45.5-68.6 70-147.2 95.3-224.7 11-33.6 20.5-82.4 47.3-108 37-35.3 115.1-40.3 163.1-42.1 40.7-1.5 96.2-4.3 131 21.9 22.8 17.2 25.5 47.8 27.7 74.1 4.2 49.8 0.5 99.9 2.6 149.7 1.3 31.3 9 63.1 5.4 94.5-6.8 58.9-27.9 122.1-52.5 175.7-12.7 27.7-26.8 65.5-52.9 83.4-41.3 28.4-100.4 32.2-148.6 36.2-113.3 9.4-225.2-4-338.5-4"/>
+    <path id="blob2" d="M1156.6 613c-72.9 36-160.8 38.4-238.4 14.3-40.5-12.6-79.4-30.1-119.6-43.7-82.8-27.9-176.1-52.7-264.4-40.9-71.5 9.6-88.3 110.8-108.4 167.4-14.6 40.8-33.2 79.6-59.5 114.3-20.5 27-49.4 49.3-65.6 79.4-24.8 46.2-26.7 122.3-10.9 173.5 16.2 52.6 117.2 59 156.5 59.2 77.5 .2 154-2.8 231.2-10.3 75.6-7.4 150.7-19.6 226.4-26.2 43.4-3.9 86.8-7.3 130.3-10.4 15.2-1.1 44.3 .2 55.7-12.3 17.9-19.5 16.3-61.4 17.8-85.4 4.1-63.4-1.3-130.4 14.5-192.5"/>
+
+    <g id="combo1">
+      <use href="#blob1" class="color1" transform="translate(0,-300)"/>
+      <use href="#blob2" class="color2"/>
+    </g>
+    <g id="combo2">
+      <use href="#blob1" class="color3" transform="translate(0,-280)"/>
+      <use href="#blob2" class="color4"/>
+    </g>
+    <g id="combo3">
+      <use href="#blob1" class="color5" transform="translate(0,-320)"/>
+      <use href="#blob2" class="color6"/>
+    </g>
+  </defs>
+
+  <g transform="translate(-180,760) scale(0.9) rotate(-12)">
+    <use href="#combo1"/>
+  </g>
+  <g transform="translate(80,520) scale(0.8) rotate(6)">
+    <use href="#combo2"/>
+  </g>
+  <g transform="translate(540,220) scale(1.15) rotate(-4)" opacity="0.95">
+    <use href="#combo1"/>
+  </g>
+  <g transform="translate(1100,520) scale(0.95) rotate(10)">
+    <use href="#combo2"/>
+  </g>
+  <g transform="translate(1450,90) scale(0.7) rotate(-18)">
+    <use href="#combo3"/>
+  </g>
+  <g transform="translate(-100,50) scale(0.75) rotate(15)">
+    <use href="#combo3"/>
+  </g>
+</svg>
