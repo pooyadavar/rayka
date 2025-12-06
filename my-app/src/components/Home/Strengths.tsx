@@ -8,7 +8,7 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import { motion } from "framer-motion";
 import { GridLegacy as Grid } from "@mui/material";
 
-// داده‌های کارت‌ها دقیقاً طبق متن تصویر
+// داده‌های کارت‌ها
 const features = [
   {
     id: 1,
@@ -43,91 +43,88 @@ const Strengths: React.FC = () => {
     <Box
       sx={{
         py: 12,
-        bgcolor: "#f4f6f8",
+        bgcolor: "background.default", // Using default background
         position: "relative",
         overflow: "hidden",
+        backgroundImage: "radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.03) 0%, rgba(255,255,255,0) 70%)" // Subtle radial gradient
       }}
     >
-      {/* Decorative Background Shapes */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: -150,
-          left: -150,
-          width: 400,
-          height: 400,
-          borderRadius: "50%",
-          bgcolor: theme.palette.secondary.main,
-          opacity: 0.05,
-          filter: "blur(70px)",
-          zIndex: 0,
-        }}
-      />
-
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
         {/* Header Section */}
-        <Box textAlign="center" mb={8}>
-          <Typography
-            variant="overline"
-            color="primary"
-            fontWeight="bold"
-            letterSpacing={2}
-            sx={{
-              display: "block",
-              mb: 1,
-            }}
+        <Box textAlign="center" mb={10}>
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6 }}
+             viewport={{ once: true }}
           >
-            ارزش های ما
-          </Typography>
-          <Typography variant="h3" fontWeight="900" color="text.primary" mb={2}>
-            نقاط قوت و{" "}
-            <span style={{ color: theme.palette.primary.main }}>تمایز ما</span>
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            maxWidth={700}
-            mx="auto"
-            sx={{ lineHeight: 1.8 }}
-          >
-            ما با تکیه بر تجربه و دانش تخصصی، راهکارهایی منحصر به فرد و با
-            بالاترین استانداردهای جهانی ارائه می‌دهیم تا نیازهای دقیق شما را
-            برآورده کنیم.
-          </Typography>
+            <Typography
+                variant="overline"
+                color="primary"
+                fontWeight="800"
+                letterSpacing={3}
+                sx={{
+                display: "inline-block",
+                mb: 2,
+                px: 2,
+                py: 0.5,
+                borderRadius: 4,
+                bgcolor: 'rgba(37, 99, 235, 0.08)',
+                }}
+            >
+                ارزش‌های محوری
+            </Typography>
+            <Typography variant="h3" fontWeight="900" color="text.primary" mb={3} sx={{ fontSize: { xs: '2rem', md: '3rem' } }}>
+                نقاط قوت و <span style={{ 
+                    background: `linear-gradient(120deg, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                 }}>تمایز ما</span>
+            </Typography>
+            <Typography
+                variant="body1"
+                color="text.secondary"
+                maxWidth={700}
+                mx="auto"
+                sx={{ lineHeight: 2, fontSize: '1.1rem' }}
+            >
+                تلفیق تجربه، دانش فنی و تکنولوژی‌های روز برای ارائه راهکارهایی هوشمند و دقیق.
+            </Typography>
+          </motion.div>
         </Box>
 
-        {/* Hero Image Section (The Map) */}
+        {/* Hero Image Section - Modernized */}
         <Box
           component={motion.div}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           sx={{
             width: "100%",
-            height: { xs: 220, md: 400 },
+            height: { xs: 250, md: 450 },
             borderRadius: 8,
             overflow: "hidden",
             position: "relative",
-            mb: 10,
-            boxShadow: `0 25px 50px -12px ${theme.palette.primary.main}4D`, // Dynamic shadow color
-            bgcolor: theme.palette.primary.dark, // Fallback color, darker blue
+            mb: 12,
+            boxShadow: '0 40px 80px -20px rgba(0,0,0,0.15)', // Softer, larger shadow
+            bgcolor: theme.palette.grey[100],
           }}
         >
-          {/* تصویر نقشه */}
-          <Box
+            <Box
             component="img"
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop" // تصویر موقت شبیه نقشه
-            alt="Map Background"
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" // More modern tech/map image
+            alt="Technology Map Background"
             sx={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: 0.7, // Slightly more opaque
-              filter:
-                "grayscale(100%) sepia(20%) hue-rotate(220deg) saturate(300%) contrast(1.2)", // فیلتر CSS برای شبیه‌سازی رنگ آبی
+              filter: "grayscale(20%) contrast(1.1)", 
+              transition: 'transform 10s ease',
+              '&:hover': { transform: 'scale(1.05)' } // Subtle zoom on hover
             }}
           />
+          {/* Gradient Overlay */}
           <Box
             sx={{
               position: "absolute",
@@ -135,92 +132,80 @@ const Strengths: React.FC = () => {
               left: 0,
               width: "100%",
               height: "100%",
-              background:
-                "linear-gradient(to top, rgba(0,0,0,0.5), transparent)", // Dark overlay at bottom
+              background: "linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(37, 99, 235, 0.2) 100%)",
             }}
           />
+           {/* Overlay Text */}
+           <Box sx={{ position: 'absolute', bottom: 40, left: 40, right: 40, color: 'white', zIndex: 2 }}>
+               <Typography variant="h4" fontWeight="bold" textAlign={"left"}>دقت در هر پیکسل</Typography>
+               <Typography variant="subtitle1" sx={{ opacity: 0.9 }} textAlign={"left"}>استانداردهای جهانی در پروژه‌های ملی</Typography>
+           </Box>
         </Box>
 
-        {/* Features Grid */}
+        {/* Features Grid - Modern Cards */}
         <Grid container spacing={4} justifyContent="center">
           {features.map((item, index) => (
             <Grid item xs={12} sm={6} lg={3} key={item.id}>
               <Paper
                 component={motion.div}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 elevation={0}
                 sx={{
                   p: 4,
                   height: "100%",
-                  borderRadius: 6, // More rounded corners
-                  bgcolor: "rgba(0, 0, 0, 0.03)",
-                  backdropFilter: "blur(10px)",
-                  WebkitBackdropFilter: "blur(10px)",
+                  borderRadius: 6,
+                  bgcolor: "background.paper",
                   border: "1px solid",
-                  borderColor: "divider",
+                  borderColor: "rgba(0,0,0,0.06)",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
-                  transition:
-                    "transform 0.4s ease-out, box-shadow 0.4s ease-out",
+                  alignItems: "flex-start", // Left align for modern look (RTL: Right)
+                  textAlign: "right",
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                   "&:hover": {
-                    transform: "translateY(-10px)",
-                    boxShadow: "0 20px 40px -10px rgba(37, 99, 235, 0.2)", // Dynamic shadow on hover
-                    borderColor: theme.palette.primary.main,
+                    transform: "translateY(-12px)",
+                    boxShadow: "0 20px 40px -10px rgba(0,0,0,0.1)",
+                    borderColor: 'transparent',
+                    "& .icon-bg": {
+                        transform: "scale(1.1)",
+                        bgcolor: theme.palette.primary.main,
+                        color: "white"
+                    }
                   },
                 }}
               >
-                {/* Icon and Number */}
+                {/* Icon */}
                 <Box
+                  className="icon-bg"
                   sx={{
-                    position: "relative",
                     mb: 3,
-                    p: 2, // Padding around icon
-                    borderRadius: "50%",
-                    bgcolor: theme.palette.primary.light, // Light blue background for icon
-                    color: theme.palette.primary.dark, // Darker blue icon color
-                    fontSize: 40, // Larger icon size
+                    width: 64,
+                    height: 64,
+                    borderRadius: 3, // Squircle shape
+                    bgcolor: 'rgba(37, 99, 235, 0.1)',
+                    color: theme.palette.primary.main,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    transition: "all 0.3s ease",
                   }}
                 >
                   {React.cloneElement(item.icon as React.ReactElement, {
-                    sx: { fontSize: 40 },
+                    sx: { fontSize: 32 },
                   })}
-                  <Box
-                    sx={{
-                      // Subtle number badge
-                      position: "absolute",
-                      bottom: -8,
-                      right: -8,
-                      width: 24,
-                      height: 24,
-                      bgcolor: theme.palette.primary.main,
-                      color: "white",
-                      borderRadius: "50%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontWeight: "bold",
-                      fontSize: "0.75rem",
-                      border: "2px solid white",
-                    }}
-                  >
-                    {item.id}
-                  </Box>
                 </Box>
 
                 {/* Content */}
                 <Typography
                   variant="h6"
-                  fontWeight="bold"
+                  fontWeight="800"
                   gutterBottom
-                  sx={{ color: theme.palette.text.primary, mt: 1 }}
+                  sx={{ color: theme.palette.text.primary, mb: 2 }}
                 >
                   {item.title}
                 </Typography>
@@ -231,11 +216,23 @@ const Strengths: React.FC = () => {
                   sx={{
                     lineHeight: 1.8,
                     textAlign: "justify",
-                    direction: "rtl",
-                    px: 1,
                   }}
                 >
                   {item.desc}
+                </Typography>
+                
+                {/* Number Watermark */}
+                <Typography sx={{ 
+                    position: 'absolute', 
+                    top: 20, 
+                    left: 20, 
+                    fontWeight: 900, 
+                    fontSize: '4rem', 
+                    color: 'rgba(0,0,0,0.03)',
+                    lineHeight: 0.8,
+                    pointerEvents: 'none'
+                }}>
+                    0{item.id}
                 </Typography>
               </Paper>
             </Grid>
