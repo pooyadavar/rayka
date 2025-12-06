@@ -27,7 +27,7 @@ const cacheRtl = createCache({
 const ContactSection = () => (
   <Box sx={{ py: 10 }} id="contact">
      {/* کد بخش تماس مشابه HTML اما با کامپوننت‌های MUI */}
-     <Typography textAlign="center">بخش تماس با ما (جایگزین شود)</Typography>
+     <Typography textAlign="center">بخش تماس با ما </Typography>
   </Box>
 );
 
@@ -44,7 +44,7 @@ const App: React.FC = () => {
         <Portfolio />
         <ContactSection />
         <Box component="footer" sx={{ py: 4, textAlign: 'center', bgcolor: 'grey.100' }}>
-           <Typography variant="body2" color="text.secondary">© 1403 شرکت مهندسی نقشه‌پردازان دقیق</Typography>
+           <Typography variant="body2" color="text.secondary">© 1403 شرکت مهندسی نقشه‌پردازان رایکا</Typography>
         </Box>
       </ThemeProvider>
     </CacheProvider>

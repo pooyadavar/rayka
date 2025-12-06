@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
               N
             </Box>
             <Typography variant="h6" fontWeight="bold" color="text.secondary">
-              نقشه‌پردازان دقیق
+              نقشه‌پردازان رایکا
             </Typography>
           </Box>
 

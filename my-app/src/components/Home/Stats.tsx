@@ -181,7 +181,7 @@ const Stats: React.FC = () => {
   }
 
   return (
-    <Box sx={{ py: 12, bgcolor: '#f4f6f8', position: 'relative' }} id="stats">
+    <Box sx={{ py: 12, bgcolor: '#f0f6f9ff', position: 'relative' }} id="stats">
       <Container maxWidth="lg">
         {/* Header */}
         <Box textAlign="center" mb={10}>
