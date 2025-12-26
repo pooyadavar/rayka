@@ -1,5 +1,5 @@
 // src/data/projectsData.ts
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export interface Project {
   id: number;
