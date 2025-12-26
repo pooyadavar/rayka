@@ -12,7 +12,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemButton
+  ListItemButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useScrollTrigger } from "@mui/material";
@@ -23,9 +23,9 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { label: "خانه", href: "#hero" },
-    { label: "درباره ما", href: "#about" },
-    { label: "خدمات", href: "#services" },
+    { label: "خدمات و محصولات", href: "#services" },
     { label: "پروژه‌ها", href: "#portfolio" },
+    { label: "درباره ما", href: "#about" },
   ];
 
   return (
@@ -37,30 +37,29 @@ const Navbar: React.FC = () => {
         backdropFilter: trigger ? "blur(10px)" : "none",
         color: trigger ? "text.primary" : "text.primary",
         transition: "all 0.3s",
-        borderBottom: trigger ? "1px solid rgba(0,0,0,0.05)" : "none",
+        borderBottom: "0.75px solid gray",
       }}
     >
-      <Container maxWidth="lg" >
-        <Toolbar sx={{ height: 80, justifyContent: "space-between" , direction:"ltr" }}>
-          <Box display="flex" alignItems="center" gap={1}>
+      <Container maxWidth="xl">
+        <Toolbar
+          sx={{ height: 80, justifyContent: "space-between", direction: "ltr" }}
+        >
+          <Box display="flex" alignItems="center" gap={2}>
             <Box
               sx={{
-                width: 40,
-                height: 40,
-                bgcolor: "primary.main",
                 borderRadius: 3,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 color: "white",
                 fontWeight: "bold",
-                transform: "rotate(3deg)",
               }}
             >
-              N
+              <img src="src/assets/svg/compony-logo.png" alt="Logo"  style={{width:"90px"}}/>
             </Box>
+            
             <Typography variant="h6" fontWeight="bold" color="text.secondary">
-              نقشه‌پردازان رایکا
+              داده پژوهان رایکا
             </Typography>
           </Box>
 

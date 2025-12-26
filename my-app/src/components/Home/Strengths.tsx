@@ -154,6 +154,7 @@ const Strengths: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 elevation={0}
                 sx={{
+                  direction: "ltr",
                   p: 4,
                   height: "100%",
                   borderRadius: 6,
@@ -225,7 +226,7 @@ const Strengths: React.FC = () => {
                 <Typography sx={{ 
                     position: 'absolute', 
                     top: 20, 
-                    left: 20, 
+                    right: 20 , 
                     fontWeight: 900, 
                     fontSize: '4rem', 
                     color: 'rgba(0,0,0,0.03)',
