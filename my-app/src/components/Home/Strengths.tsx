@@ -197,7 +197,6 @@ const Strengths: React.FC = () => {
                   }}
                 >
                   {React.cloneElement(item.icon as React.ReactElement, {
-                    sx: { fontSize: 32 },
                   })}
                 </Box>
 

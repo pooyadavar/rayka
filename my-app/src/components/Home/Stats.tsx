@@ -71,7 +71,7 @@ const StatCard = ({ icon, value, label, delay }: { icon: React.ReactNode, value:
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-      {React.cloneElement(icon as React.ReactElement, { fontSize: "medium" })}
+      {React.cloneElement(icon as React.ReactElement)}
     </Box>
     <Box>
       <Typography variant="h3" fontWeight="800" color="text.primary" sx={{ letterSpacing: -1 }}>
