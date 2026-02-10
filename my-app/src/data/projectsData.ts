@@ -1,5 +1,3 @@
-// src/data/projectsData.ts
-import { ReactNode } from 'react';
 
 export interface Project {
   id: number;

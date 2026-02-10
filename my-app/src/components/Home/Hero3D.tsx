@@ -8,11 +8,9 @@ import {
   Button,
   Stack,
   useTheme,
-  useMediaQuery,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import ServerBro from "../../assets/svg/Server-bro.svg";
 
 // Component for the 3D Canvas (Terrain/GIS Style)
 const ThreeDCanvas: React.FC = () => {
@@ -21,10 +19,11 @@ const ThreeDCanvas: React.FC = () => {
 
   useEffect(() => {
     if (!mountRef.current) return;
+    const mountNode = mountRef.current;
 
     // Clear existing canvas to prevent duplicates
-    while (mountRef.current.firstChild) {
-      mountRef.current.removeChild(mountRef.current.firstChild);
+    while (mountNode.firstChild) {
+      mountNode.removeChild(mountNode.firstChild);
     }
 
     // Scene Setup
@@ -43,7 +42,7 @@ const ThreeDCanvas: React.FC = () => {
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    mountRef.current.appendChild(renderer.domElement);
+    mountNode.appendChild(renderer.domElement);
 
     // --- GIS Terrain Generation ---
     const geometry = new THREE.BufferGeometry();
@@ -55,7 +54,6 @@ const ThreeDCanvas: React.FC = () => {
     const count = width * depth;
 
     const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
 
     // Initialize points in a flat grid first
     let i = 0;
@@ -126,7 +124,7 @@ const ThreeDCanvas: React.FC = () => {
           const freq1 = 0.005; // Large hills
           const freq2 = 0.02; // Small details
 
-          let y =
+          const y =
             Math.sin((x + time * 20) * freq1) *
               Math.cos((z + time * 10) * freq1) *
               60 +
@@ -162,7 +160,9 @@ const ThreeDCanvas: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
-      mountRef.current?.removeChild(renderer.domElement);
+      if (mountNode && renderer.domElement && mountNode.contains(renderer.domElement)) {
+          mountNode.removeChild(renderer.domElement);
+      }
       cancelAnimationFrame(animationId);
       geometry.dispose();
       material.dispose();
@@ -184,31 +184,8 @@ const ThreeDCanvas: React.FC = () => {
   );
 };
 
-// Component for the SVG Illustration
-const SvgIllustration: React.FC = () => (
-  <Box
-    component="img"
-    src={ServerBro}
-    alt="Server Illustration"
-    sx={{
-      position: "absolute",
-      top: "50%",
-      right: "5%",
-      transform: "translateY(-50%)",
-      width: { xs: "80%", md: "45%" },
-      maxHeight: "80%",
-      zIndex: 0,
-      opacity: 0.9,
-    }}
-  />
-);
-
 const Hero3D: React.FC = () => {
   const theme = useTheme();
-  const isXsScreen = useMediaQuery(theme.breakpoints.only("xs"));
-  const isSmScreen = useMediaQuery(theme.breakpoints.only("sm"));
-  const isMdScreen = useMediaQuery(theme.breakpoints.only("md"));
-  const isLgUpScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
   const handleScrollDown = () => {
     const servicesSection = document.getElementById("services");
@@ -238,7 +215,7 @@ const Hero3D: React.FC = () => {
           zIndex: 1,
           pointerEvents: "none",
           direction: "ltr",
-          mt: 15,
+          mt: 10,
         }}
       >
         <Box sx={{ maxWidth: 700, pointerEvents: "auto",

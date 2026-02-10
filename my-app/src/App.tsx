@@ -1,4 +1,4 @@
-// src/App.tsx
+
 import React from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { CacheProvider } from "@emotion/react";
@@ -23,7 +23,6 @@ const cacheRtl = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 
-// HomePage component wrapping the single-page sections
 const HomePage = () => (
   <>
     <Hero3D />

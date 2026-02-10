@@ -1,4 +1,4 @@
-// src/components/Layout/Navbar.tsx
+
 import React, { useState } from "react";
 import {
   AppBar,
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
               <img src="src/assets/svg/compony-logo.png" alt="Logo"  style={{width:"90px"}}/>
             </Box>
             
-            <Typography variant="h6" fontWeight="bold" color="text.secondary">
+            <Typography fontWeight="bold" color="text.secondary" sx={{fontSize:{lg:"18px" , xs:"12px"}}}>
               داده پژوهان رایکا
             </Typography>
           </Box>

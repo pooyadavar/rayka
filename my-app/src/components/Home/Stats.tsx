@@ -2,6 +2,7 @@
 import React from 'react';
 import { Box, Container, Typography, Paper, useTheme } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
+import type { ChartOptions, ScriptableContext } from 'chart.js';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import { GridLegacy as Grid } from "@mui/material";
 import { motion } from 'framer-motion';
@@ -107,7 +108,7 @@ const Stats: React.FC = () => {
     datasets: [{
       label: 'نقاط برداشت شده (میلیون)',
       data: [2, 4.5, 6, 8.2],
-      backgroundColor: (context: any) => {
+      backgroundColor: (context: ScriptableContext<"bar">) => {
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 0, 0, 400);
           gradient.addColorStop(0, theme.palette.primary.main);
@@ -136,7 +137,7 @@ const Stats: React.FC = () => {
       },
       tooltip: {
         backgroundColor: 'rgba(15, 23, 42, 0.95)',
-        titleFont: { family: 'IRANSansX', weight: 'bold' },
+        titleFont: { family: 'IRANSansX', weight: 'bold' as const },
         bodyFont: { family: 'IRANSansX' },
         padding: 16,
         cornerRadius: 12,
@@ -148,7 +149,7 @@ const Stats: React.FC = () => {
     }
   };
 
-  const barOptions: any = {
+  const barOptions: ChartOptions<"bar"> = {
       ...commonOptions,
       scales: {
         x: {
@@ -159,7 +160,7 @@ const Stats: React.FC = () => {
             }
         },
         y: {
-            grid: { borderDash: [4, 4], color: '#f1f5f9', drawBorder: false },
+            grid: { color: '#f1f5f9' },
             ticks: { 
                 font: { family: 'IRANSansX', size: 12 },
                 color: theme.palette.text.secondary,
@@ -174,7 +175,7 @@ const Stats: React.FC = () => {
       }
   };
   
-  const doughnutOptions: any = {
+  const doughnutOptions: ChartOptions<"doughnut"> = {
       ...commonOptions,
       cutout: '80%', // Thinner ring
       scales: { x: { display: false }, y: { display: false } }

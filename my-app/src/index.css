@@ -40,7 +40,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f6f8; /* Optional: a light background color */
+  background-color: #f4f6f8; 
 }
 
 @keyframes gradientAnimation {

@@ -1,4 +1,4 @@
-// src/components/Layout/Footer.tsx
+
 import React from 'react';
 import {
   Box,
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
         direction: 'ltr',
       }}
     >
-      {/* Decorative Background Elements */}
+
       <Box
         sx={{
           position: 'absolute',

@@ -1,4 +1,3 @@
-// src/theme/theme.ts
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -6,11 +5,11 @@ const theme = createTheme({
 
   palette: {
     primary: {
-      main: '#2563eb', // رنگ آبی برند شما
+      main: '#2563eb', 
       light: '#60a5fa',
     },
     secondary: {
-      main: '#1e293b', // رنگ تیره اسلیت
+      main: '#1e293b', 
     },
     background: {
       default: '#f8fafc',

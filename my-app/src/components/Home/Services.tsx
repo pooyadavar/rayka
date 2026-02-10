@@ -6,7 +6,6 @@ import {
   Typography,
   Paper,
   useTheme,
-  Avatar,
   Chip,
   Stack,
   alpha,
