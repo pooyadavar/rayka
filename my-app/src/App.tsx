@@ -11,6 +11,7 @@ import "./index.css";
 import theme from "./theme/theme";
 import Navbar from "./components/Layout/Navbar";
 import Hero3D from "./components/Home/Hero3D";
+import About from "./components/Home/About";
 import Services from "./components/Home/Services";
 import Portfolio from "./components/Home/Portfolio";
 import Strengths from "./components/Home/Strengths";
@@ -26,6 +27,7 @@ const cacheRtl = createCache({
 const HomePage = () => (
   <>
     <Hero3D />
+    <About />
     <Services />
     <Strengths />
     <Portfolio />

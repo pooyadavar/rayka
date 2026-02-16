@@ -238,7 +238,7 @@ const ProjectDetail: React.FC = () => {
                          <Typography variant="body2" sx={{ opacity: 0.8, mb: 3 }}>
                              مشاوران ما آماده پاسخگویی به سوالات تخصصی شما هستند.
                          </Typography>
-                         <Button variant="contained" color="primary" href="tel:09101108077" size="large" sx={{ borderRadius: 3, px: 4 }}>
+                         <Button variant="contained" color="primary" href="tel:09196083105" size="large" sx={{ borderRadius: 3, px: 4 }}>
                              دریافت مشاوره رایگان
                          </Button>
                     </Box>

@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                 fontWeight: "bold",
               }}
             >
-              <img src="src/assets/svg/compony-logo.png" alt="Logo"  style={{width:"90px"}}/>
+              {/* <img src="src/assets/svg/compony-logo.png" alt="Logo"  style={{width:"90px"}}/> */}
             </Box>
             
             <Typography fontWeight="bold" color="text.secondary" sx={{fontSize:{lg:"18px" , xs:"12px"}}}>
@@ -77,6 +77,7 @@ const Navbar: React.FC = () => {
             <Button
               variant="contained"
               color="primary"
+              href="tel:09196083105"
               sx={{ borderRadius: 50, px: 4, ml: 2 }}
             >
               تماس با ما

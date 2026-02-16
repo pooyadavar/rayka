@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
 
             {/* بخش مشاوره */}
             <Link 
-                href="tel:09101108077" 
+                href="tel:09196083105" 
                 underline="none" 
                 sx={{ 
                     display: 'block', 
@@ -166,7 +166,7 @@ const Footer: React.FC = () => {
                     <Box>
                         <Typography variant="subtitle2" color="white" fontWeight="bold" gutterBottom sx={{ fontSize: '0.85rem' }}>تماس با ما</Typography>
                         <Typography variant="body2" dir="ltr" textAlign="right" color={alpha(theme.palette.common.white, 0.7)} sx={{ fontSize: '0.8rem' }}>
-                            09101108077
+                            09196083105
                         </Typography>
                     </Box>
                 </Box>
